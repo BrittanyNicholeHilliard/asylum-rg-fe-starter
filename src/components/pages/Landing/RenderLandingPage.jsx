@@ -1,8 +1,8 @@
 import React from 'react';
 // ADD IMPORTS BACK FOR GRAPHS SECTION
-// import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
-// import GrantRatesByNationalityImg from '../../../styles/Images/pie-chart-no-text.png';
-// import GrantRatesOverTimeImg from '../../../styles/Images/line-graph-no-text.png';
+import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
+import GrantRatesByNationalityImg from '../../../styles/Images/pie-chart-no-text.png';
+import GrantRatesOverTimeImg from '../../../styles/Images/line-graph-no-text.png';
 import HrfPhoto from '../../../styles/Images/paper-stack.jpg';
 import '../../../styles/RenderLandingPage.less';
 import { Button } from 'antd';
@@ -33,10 +33,32 @@ function RenderLandingPage(props) {
 
       {/* Graphs Section: Add code here for the graphs section for your first ticket */}
       <div className="graphs-section">
-        <div class="grant-rates-by-office-graph-container"></div>
-        <div class="grant-rates-by-nationality-container"></div>
-        <div class="grant-rates-over-time-container"></div>
+        <div class="grant-rates-by-office-graph-container">
+          <img
+            class="gr-office-img"
+            src={GrantRatesByOfficeImg}
+            alt="Grant Rates By Office Graph"
+          />
+          <p>Search Grant Rates By Office</p>
+        </div>
+        <div class="grant-rates-by-nationality-container">
+          <img
+            class="gr-nationality-img"
+            src={GrantRatesByNationalityImg}
+            alt="Grant Rates By Nationality Graph"
+          />
+          <p>Search Grant Rates By Nationality</p>
+        </div>
+        <div class="grant-rates-over-time-container">
+          <img
+            class="gr-overtime-img"
+            src={GrantRatesOverTimeImg}
+            alt="Grant Rates Over Time Graph "
+          />
+          <p>Search Grant Rates Over Time</p>
+        </div>
       </div>
+
       <div className="view-more-data-btn-container">
         <Button
           type="default"
