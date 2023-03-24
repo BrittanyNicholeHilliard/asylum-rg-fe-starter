@@ -9,6 +9,7 @@ import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 // for the purposes of testing PageNav
 // import PageNav from '../../common/PageNav';
+import Data from '../../../data/COW2021001887-I589Data.csv';
 
 function RenderLandingPage(props) {
   const scrollToTop = () => {
@@ -75,7 +76,8 @@ function RenderLandingPage(props) {
             id="downloadBtn"
             value="download"
             style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
-            onClick={() => {}}
+            href={Data}
+            download="data.csv"
           >
             {' '}
             Download the Data
