@@ -1,3 +1,4 @@
+
 import React from 'react';
 // ADD IMPORTS BACK FOR GRAPHS SECTION
 import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
@@ -9,7 +10,26 @@ import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 // for the purposes of testing PageNav
 // import PageNav from '../../common/PageNav';
-import Data from '../../../data/COW2021001887-I589Data.csv';
+require('dotenv').config();
+
+const dataPath = process.env.DATA_PATH;
+
+
+function downloadCsv() {
+  fetch(dataPath)
+    .then(response => response.blob())
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'data.csv');
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+}
+
 
 function RenderLandingPage(props) {
   const scrollToTop = () => {
@@ -76,11 +96,8 @@ function RenderLandingPage(props) {
             id="downloadBtn"
             value="download"
             style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
-            href={Data}
-            download="data.csv"
-          >
-            {' '}
-            Download the Data
+            onClick={downloadCsv}
+          > Download the Data
           </Button>
         </div>
       </div>
