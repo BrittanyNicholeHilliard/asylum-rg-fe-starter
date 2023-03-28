@@ -10,25 +10,26 @@ import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 // for the purposes of testing PageNav
 // import PageNav from '../../common/PageNav';
-require('dotenv').config();
+// import * as dotenv from 'dotenv';
+// dotenv.config();
+// //import express from 'express';
 
-const dataPath = process.env.DATA_PATH;
+// const dataPath = process.env.DATA_PATH;
 
 
-function downloadCsv() {
-  fetch(dataPath)
-    .then(response => response.blob())
-    .then(blob => {
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.setAttribute('href', url);
-      link.setAttribute('download', 'data.csv');
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    });
-}
+// function downloadCsv() {
+//   fetch(dataPath)
+//     .then(response => response.blob())
+//     .then(blob => {
+//       const url = URL.createObjectURL(blob);
+//       const link = document.createElement('a');
+//       link.setAttribute('href', url);
+//       link.setAttribute('download', 'COW2021001887-I589Data.csv');
+//       document.body.appendChild(link);
+//       link.click();
+//       document.body.removeChild(link);
+//     });
+// }
 
 
 function RenderLandingPage(props) {
@@ -96,7 +97,7 @@ function RenderLandingPage(props) {
             id="downloadBtn"
             value="download"
             style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
-            onClick={downloadCsv}
+            onClick={()=>{}}
           > Download the Data
           </Button>
         </div>
