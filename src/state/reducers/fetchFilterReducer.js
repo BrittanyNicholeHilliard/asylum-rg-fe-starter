@@ -37,6 +37,7 @@ const filterReducer = (state = initialState, action) => {
       };
     }
     case SET_CONTINENT_FILTER: {
+      
       return {
         ...state,
         continents: action.payload,

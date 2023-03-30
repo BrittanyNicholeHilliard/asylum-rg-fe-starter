@@ -9,8 +9,8 @@ To begin work on this ticket, make sure you have finished:
 
 Deliver the following: 
 
-- Integrate this frontend application with an API. 
-- Rework redux and data visualizations to use an API instead of `test_data.json`.
+- Integrate this frontend application with an API. -done
+- Rework redux and data visualizations to use an API instead of `test_data.json`. - done, dummy data file removed for good measure
 - The graphs on the Graphs page should display after the integration.
 
 ### Relevant Files

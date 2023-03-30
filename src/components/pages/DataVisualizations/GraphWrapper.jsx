@@ -52,6 +52,7 @@ function GraphWrapper(props) {
         break;
     }
   }
+  
 
   function updateStateWithNewData(years, view, office, stateSettingCallback) {
     if (office === 'all' || !office) {
@@ -83,7 +84,8 @@ function GraphWrapper(props) {
         axios.get(`${URL}/citizenshipSummary`, {
           params: {
             from: years[0],
-            to: years[1] }
+            to: years[1],
+            office: office }
         }).then(res => {
           stateSettingCallback(view, office, res.data);
         }).catch(err => {
@@ -93,7 +95,8 @@ function GraphWrapper(props) {
         axios.get(`${URL}/fiscalSummary`, {
           params:{
             from: years[0], 
-            to: years[1] }
+            to: years[1], 
+            office: office }
         }).then(res => {
           stateSettingCallback(view, office, res.data);
         }).catch(err => {
