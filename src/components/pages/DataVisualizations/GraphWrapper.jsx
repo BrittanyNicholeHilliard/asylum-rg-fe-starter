@@ -13,8 +13,9 @@ import { resetVisualizationQuery } from '../../../state/actionCreators';
 //import test_data from '../../../data/test_data.json';
 import { colors } from '../../../styles/data_vis_colors';
 import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
-
 const { background_color } = colors;
+
+
 const URL = 'https://hrf-asylum-be-b.herokuapp.com/cases';
 
 function GraphWrapper(props) {
@@ -51,11 +52,10 @@ function GraphWrapper(props) {
         break;
     }
   }
+
   function updateStateWithNewData(years, view, office, stateSettingCallback) {
-
-
     if (office === 'all' || !office) {
-      if (view==='citizenship') {
+      if (view ==='citizenship') {
       axios.get(`${URL}/citizenshipSummary`, {
           params: {
             from: years[0],
@@ -66,17 +66,17 @@ function GraphWrapper(props) {
         }).catch(err => {
           console.error(err);
         });
-    } else {
+      } else {
       axios.get(`${URL}/fiscalSummary`, {
         params: {
           from: years[0], 
           to: years[0]
-        }
-      }).then(res => {
-        stateSettingCallback(view, office, res.data);
-      }).catch(err => {
-        console.error(err);
-      });
+      }
+        }).then(res => {
+          stateSettingCallback(view, office, res.data);
+        }).catch(err => {
+          console.error(err);
+        });
       }    
     }  else {
       if (view === 'citizenship'){
@@ -105,23 +105,6 @@ function GraphWrapper(props) {
 
 
 
-  //     axios
-  //       .get(process.env.REACT_APP_API_URI, {
-  //         // mock URL, can be simply replaced by `${Real_Production_URL}/summary` in prod!
-  //         params: {
-  //           from: years[0],
-  //           to: years[1],
-  //           office: office,
-  //         },
-  //       })
-  //       .then(result => {
-  //         stateSettingCallback(view, office, test_data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
-  //       })
-  //       .catch(err => {
-  //         console.error(err);
-  //       });
-  //   }
-  // }
   const clearQuery = (view, office) => {
     dispatch(resetVisualizationQuery(view, office));
   };

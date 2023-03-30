@@ -29,13 +29,15 @@ function ViewSelect(props) {
       <Button onClick={() => update_view('time-series', office)}>
         Time Series
       </Button>
+
       {office ? (
         ''
       ) : (
         <Button onClick={() => update_view('office-heat-map', office)}>
           USCIS Asylum Offices Heat Map
-        </Button>
-      )}
+        </Button>  )}
+
+        
       <Button onClick={() => update_view('citizenship', office)}>
         Citizenship of Asylum Seeker
       </Button>
