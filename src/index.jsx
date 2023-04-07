@@ -23,6 +23,10 @@ import { configureStore } from '@reduxjs/toolkit';
 import reducer from './state/reducers';
 import { colors } from './styles/data_vis_colors';
 import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoadingComponent from './components/common/LoadingComponent';
+import { Profile }from './components/pages/Profile/index.js';
+import ProtectedRoute from './components/common/protectedroute';
 
 const { primary_accent_color } = colors;
 
@@ -42,6 +46,13 @@ ReactDOM.render(
 
 export function App() {
   const { Footer, Header } = Layout;
+  const { isLoading } = useAuth0();
+
+  
+  if (isLoading) {
+    return <LoadingComponent />;
+  }
+
   return (
     <Layout>
       <Header
@@ -57,6 +68,7 @@ export function App() {
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
+        <ProtectedRoute path="/profile" component={Profile} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer

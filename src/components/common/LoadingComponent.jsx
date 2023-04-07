@@ -1,14 +1,11 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React from "react";
+const loadingImg =
+  "https://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg";
 
-function LoadingComponent(props) {
-  const { message } = props;
-
-  return <div>{message}</div>;
-}
+const LoadingComponent = () => (
+  <div className="spinner">
+    <img src={loadingImg} alt="Loading..." />
+  </div>
+);
 
 export default LoadingComponent;
-
-LoadingComponent.propTypes = {
-  message: PropTypes.string.isRequired,
-};
