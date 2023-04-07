@@ -3,9 +3,9 @@ import { Image } from 'antd';
 import { Link } from 'react-router-dom';
 import Logo from '../../styles/Images/WhiteLogo.png';
 import { colors } from '../../styles/data_vis_colors';
-import LoginButton from '../common/LoginButton';
-import LogoutButton from '../common/LogoutButton';
+
 import SignupButton from '../common/signup-button';
+import AuthenticationButton from '../common/authentication-button.js';
 import { useAuth0 } from '@auth0/auth0-react';
 import '../../styles/RenderLandingPage.less';
 
@@ -39,10 +39,9 @@ function HeaderContent() {
           <Link to="/profile" className="nav-links" style={{ color: '#E2F0F7',  paddingRight: '75px' }}>
             Profile
           </Link>
-        ) : (
-          <SignupButton className="signup" />
-        )}
-        {isAuthenticated ? <LogoutButton className="logbtn"/> : <LoginButton className="logbtn"/> }
+        ) : null}
+        <AuthenticationButton/>
+
 
         </div>
       </div>
