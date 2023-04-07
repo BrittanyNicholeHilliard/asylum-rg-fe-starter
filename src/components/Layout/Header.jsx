@@ -14,7 +14,7 @@ function HeaderContent() {
   const { isAuthenticated } = useAuth0();
 
   return (
-    <div
+    <div 
       style={{
         display: 'flex',
         justifyContent: 'space-between',
