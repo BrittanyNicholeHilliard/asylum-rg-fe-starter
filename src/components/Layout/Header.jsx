@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Logo from '../../styles/Images/WhiteLogo.png';
 import { colors } from '../../styles/data_vis_colors';
 
-import SignupButton from '../common/signup-button';
 import AuthenticationButton from '../common/authentication-button.js';
 import { useAuth0 } from '@auth0/auth0-react';
 import '../../styles/RenderLandingPage.less';
