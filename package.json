@@ -26,6 +26,8 @@
     "dotenv": "^16.0.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
+    "file-saver": "^2.0.5",
+    "filesaver": "^0.0.13",
     "node": "^16.16.0",
     "plotly.js": "^1.54.6",
     "react": "^16.13.1",

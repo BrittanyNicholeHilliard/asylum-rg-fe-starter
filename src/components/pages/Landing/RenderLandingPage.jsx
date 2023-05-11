@@ -8,28 +8,14 @@ import HrfPhoto from '../../../styles/Images/paper-stack.jpg';
 import '../../../styles/RenderLandingPage.less';
 import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
+import { saveAs } from 'file-saver';
+import FileSaver from 'file-saver';
 // for the purposes of testing PageNav
 // import PageNav from '../../common/PageNav';
 // import * as dotenv from 'dotenv';
 // dotenv.config();
 // //import express from 'express';
 
-// const dataPath = process.env.DATA_PATH;
-
-
-// function downloadCsv() {
-//   fetch(dataPath)
-//     .then(response => response.blob())
-//     .then(blob => {
-//       const url = URL.createObjectURL(blob);
-//       const link = document.createElement('a');
-//       link.setAttribute('href', url);
-//       link.setAttribute('download', 'COW2021001887-I589Data.csv');
-//       document.body.appendChild(link);
-//       link.click();
-//       document.body.removeChild(link);
-//     });
-// }
 
 
 function RenderLandingPage(props) {
@@ -39,6 +25,10 @@ function RenderLandingPage(props) {
   };
 
   const history = useHistory();
+
+
+
+
 
   return (
     <div className="main">
@@ -93,13 +83,9 @@ function RenderLandingPage(props) {
           </Button>
         </div>
         <div className="download-data-btn-container">
-          <Button
-            id="downloadBtn"
-            value="download"
-            style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
-            onClick={()=>{}}
-          > Download the Data
-          </Button>
+        <a href="data/COW2021001887-I589Data.csv" download="Asylum Data">
+          <Button style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }} >Download The Data</Button>
+        </a>
         </div>
       </div>
 
